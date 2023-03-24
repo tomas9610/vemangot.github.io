@@ -7,9 +7,35 @@
 /*Colores*/
 
 :root {
+  
     --cl-text: rgba(0, 0, 0, 62);
     --cl-text-hover:rgba(0, 0, 0, 62);
+    --cl-primary :#F5ECEC; /*Fondo primer módulo y último*/
+    --cl-secundary : #E8EBF4;
+    --cl-third : #E8F4EB;
+
+    /*Intensidad y degradados accent 1*/
+    --cl-accent-1-1 : rgb(60, 102, 240); /*Botone primario 2 -- cerrar menu*/
+    --cl-accent-1-06 : rgb(106, 120, 245); /*Botone primario 2 -- cerrar menu*/
+    --cl-accent-1-05 : rgba(204, 221, 247, 0.527); /*Botone primario 2 -- cerrar menu*/
+
+    /* accent2*/
+    --cl-accent-2-15 : #12203e;
+    --cl-accent-2-1 : #4F619D;
+    --cl-accent-2-08 : #4f619de8;
+    --cl-accent-2-03 : #4f619d34;
+    --cl-accent-2-02 : #E8EBF0;
+    --cl-accent-2-01 : #eaf1eb49;  /*Fondo formulario*/
+
+    /*tercero*/
+    --cl-accent-3-1: #E5F2E8; /* Fondo módulo 3 index*/
+
+    /*Color claro y negro*/
+    --cl-light : #fff;
+    --cl-dark : #000;
+
   }
+
 
 /*Fonts*/
 @font-face {
@@ -27,6 +53,47 @@
     src: url(../inter/static/Inter-Regular.ttf);
   }
 
+
+
+    /*Estos son los colores del sitio web*/
+    .cl__primary{
+      background-color: var(--cl-primary);
+    }
+  
+    .cl__secundary{
+      background-color: var(--cl-secundary);
+    }
+  
+    .cl__third{
+      background-color: var(--cl-third);
+    }
+
+
+
+  /*Formato globales*/
+
+  a{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: interBold;
+  }
+
+  h1{
+    font-family: interBold;
+    font-size: 60px;
+  }
+
+  h2{
+    font-size: 35px;
+    font-family: interBold;
+  }
+
+  h3{
+    font-size: 20px;
+    font-family: interBold;
+  }
+
+
 body{
     margin: 0;
     padding: 0;
@@ -43,6 +110,9 @@ a{
   font-family: interRegular;
   font-size: 18px;
 }
+
+
+/*Contenedor principal y estructura en PC*/
 
 .container { 
     display: grid;
@@ -64,15 +134,21 @@ a{
                          "contact contact contact";
   }
 
+
+
+
+
+
+
   /*Botones*/
   .btn-primary{
-    background-color: #4F619D;
-    color: #fff;
+    background-color: var(--cl-accent-2-08);
+    color: var(--cl-light);
   }
 
   .btn-primary-shadow{
-    box-shadow: inset 0 0 0 2px #4F619D; /*Borde interno*/
-    color: #4F619D;
+    box-shadow: inset 0 0 0 2px var(--cl-accent-2-08); /*Borde interno*/
+    color: var(--cl-accent-2-08);
   }
 
   /*Logo*/
@@ -95,6 +171,9 @@ a{
 
   /*Fin del logo*/
 
+
+
+  /*Estilo de la caja del nav color de estilo de fondo*/
   .div-nav{
     position: absolute;
     width: 100%;
@@ -113,16 +192,25 @@ a{
     grid-template-columns: 1fr .6fr;
   }
 
+
+
+
+
+  /*Caja de fondo sin un contenido, solo para dar estilo al fondo blanco en este caso en el nav*/
   .div-accent{
-    background-color: #F2E5E5;
+    background-color: var(--cl-primary);
     transition: all .5s;
   }
 
   .div-accent-light{
-    background-color: #fff;
+    background-color: var(--cl-light);
     transition: all .5s;
   }
 
+
+
+
+  /*División del menú con los CTA*/
   .menu{
     display: grid;
     grid-area: menu;
@@ -148,13 +236,27 @@ a{
   }
 
 
+
+
+
+
+  /*Alineamiento de los enlaces del menú de manera horizontal*/
   .menu-ul__li{
     display: inline;
     float: left;
   }
 
-  .menu-ul__a{
+  .menu-ul__a--active{
+    color: var(--cl-accent-2-1);
+    border-bottom: 1px solid var(--cl-accent-2-1);
+  }
+
+  .menu-ul__a--inactive{
     color: var(--cl-text);
+  }
+
+
+  .menu-ul__a{
     margin-left: 60px;
   }
 
@@ -162,6 +264,11 @@ a{
     margin-left: -60px; /*Devolvemos el primero en posición original*/
   }
 
+
+
+
+
+  /*Menú en móvil cuando está cerrado o abierto*/
   .menu__close{
     display: none;
   }
@@ -176,6 +283,11 @@ a{
     display: none;
   }
 
+
+
+
+
+/*Contenedor del boton extra del contacto en la parte superior*/
   .container-contact{
     grid-area: contact;
     justify-content: right;
@@ -194,6 +306,14 @@ a{
     font-size: 14px;
   }
 
+
+
+
+
+
+
+
+  /*CTA o botones de llamado a la acción*/
   .btn-tca{
     display: inline-block;
     padding: 12px 30px;
@@ -213,10 +333,16 @@ a{
     grid-area: header;
     position: fixed;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--cl-light);
     z-index: 3;
   }
   
+
+
+
+
+
+  /*Contenedores principales de las páginas o sus respectivas posiciones en GRID*/
    .main {
     grid-area: contenido;
     position: relative;
@@ -241,6 +367,11 @@ a{
     align-items: center;
   }
 
+
+
+
+
+
   /*Introducción*/
   .container-intro{
     width: 90%;
@@ -251,6 +382,10 @@ a{
     align-content: center;
   }
 
+
+
+
+  /*Contendor del H1 en el index**/
   .container-intro__title{
     display: flex;
     justify-content: center;
@@ -268,21 +403,22 @@ a{
 
   .container-intro__cta-button{
     padding: 18px 40px;
-    background-color: #E5E8F2;
-    box-shadow: inset 0 0 0 2px #4F619D; /*Borde interno*/
-    color: #000;
+    background-color: var(--cl-accent-2-01);
+    box-shadow: inset 0 0 0 2px var(--cl-accent-2-08); /*Borde interno*/
+    color: var(--cl-dark);
     font-family: interBold;
   }
 
+
+
+
+
+
+  /*Caja contenedora del título y la descripción */
   .container-intro__box{
     width: 70%;
     left: 30%;
     position: relative;
-  }
-
-  h1{
-    font-family: interBold;
-    font-size: 60px;
   }
 
   .container-intro__img{
@@ -333,40 +469,8 @@ a{
   }
 
 
-  /*Estos son los colores del sitio web*/
-  .cl__primary{
-    background-color: #F5ECEC;
-  }
 
-  .cl__secundary{
-    background-color: #E8EBF4;
-  }
-
-  .cl__third{
-    background-color: #E8F4EB;
-  }
-
-
-/*Formato globales*/
-
-  a{
-    text-decoration: none;
-    font-size: 18px;
-    font-family: interBold;
-  }
-
-  h2{
-    font-size: 35px;
-    font-family: interBold;
-  }
-
-  h3{
-    font-size: 20px;
-    font-family: interBold;
-  }
-
-
-
+  /*Alineando el contenedor del módulo 2*/
 
   .container-module2-cnt{
     height: 600px;
@@ -392,6 +496,11 @@ a{
   width: 70%;
 }
 
+
+
+
+
+/*Tamaño a la caja de imágenes del módulo2*/
 .container-module2-img__box{
   height: 200px;
   width: 200px;
@@ -406,13 +515,20 @@ a{
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: #BEC5DE;
+  background-color: var(--cl-accent-2-03);
   border-radius: 1000px;
   left: -30px;
   top: 20px;
   z-index: -1;
 }
 
+
+
+
+
+
+
+/*Tamaño y alineado del módulo 3*/
 .container-module3{
   display: flex;
   justify-content: center;
@@ -427,7 +543,7 @@ a{
 }
 
 .div-bg{
-  background-color: #E5F2E8;
+  background-color: var( --cl-accent-3-1);
   height: 50%;
   width: 60%;
   position: absolute;
@@ -439,6 +555,12 @@ a{
   position: relative;
 }
 
+
+
+
+
+
+/*Estilos de las cajas e imágenes del módulo 3*/
 .container-module3-img img{
   height: 200px;
 }
@@ -472,6 +594,10 @@ a{
   grid-gap: 30px;
 }
 
+
+
+
+/*Estilos de las cartas altura, ancho, color, centrado*/
 .card{
   display: grid;
   justify-content: center;
@@ -482,7 +608,7 @@ a{
   width: 80%;
   left: 15%;
   position: relative;
-  background-color: #fff;
+  background-color: var(--cl-light);
 }
 
 .card-box-txt{
@@ -500,7 +626,7 @@ a{
 }
 
 .bg-div2{
-  background-color: #E5E8F2;
+  background-color: var(--cl-accent-2-02);
   position: absolute;
   height: 80%;
   width: 100%;
@@ -517,9 +643,15 @@ a{
 .btn-link__a{
   position: relative;
   left: 100px;
-  color: #000;
+  color: var(--cl-dark);
   width: 200px;
 }
+
+
+
+
+
+/*Alineando el contenedor del módulo 4 y 5*/
 
 .container-module4__h2{
   position: relative;
@@ -528,15 +660,8 @@ a{
   bottom: 30px;
 }
 
-.container-module5__h2{
-  position: relative;
-  left: 100px;
-  display: inline;
-  bottom: 40px;
-}
-
 .container-module5{
-  background-color: #F5ECEC;
+  background-color: var(--cl-primary);
   margin: 80px 0px;
   padding: 60px 0px;
 }
@@ -553,8 +678,17 @@ a{
   grid-template-columns: repeat(3, 1fr);
 }
 
+.container-module5__h2{
+  position: relative;
+  left: 100px;
+  display: inline;
+  bottom: 40px;
+}
+
+
+/*Estilos de las cartas versión 2*/
 .card-2{
-  background-color: #fff;
+  background-color: var(--cl-light);
   width: 80%;
   height: 460px;
   position: relative;
@@ -565,6 +699,8 @@ a{
   position: relative;
 }
 
+
+/*Estilo del contenedor de las imágnes de las cartas*/
 .card-2-img{
   width: 60%;
   height: 40px;
@@ -603,10 +739,10 @@ a{
 
 
 
-/*footer*/
+/*footer estilos básicos del footer*/
 .footer {
-  background-color: #12203e;
-  color: white;
+  background-color: var(--cl-accent-2-15);
+  color: var(--cl-light);
   grid-area: footer;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -679,7 +815,7 @@ a{
   grid-row: span 2;
   }
 
-  /*Contacto*/
+  /*Contacto y estilos del formulario*/
 
   .main2__contact{
     display: grid;
@@ -696,7 +832,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eaf1eb49;
+    background-color: var(--cl-accent-2-01);
   }
 
   .contact_form--box{
@@ -710,12 +846,13 @@ a{
   }
 
 
+  /*Le da estilos al input y al textarea*/
   .contact__form--inp, .contact__form textarea{
     margin: 5px;
     position: relative;
     outline: none;
-    background-color: #4f619d1a;
-    border: 1px solid #4f619d34;
+    background-color: var(--cl-accent-2-02);
+    border: 1px solid var(--cl-accent-2-03);
     border-radius: 2px;
     width: 100%;
   }
@@ -729,21 +866,29 @@ a{
     resize: none;
   }
 
+
+
+
+  /*Este es el boton de enviar el formulario*/
   .form__submit{
     cursor: pointer;
-    background-color: rgb(79,97,157);
-    color: #fff;
+    background-color: var(--cl-accent-2-1);
+    color: var(--cl-light);
     transition: .3s;
   }
 
   .form__submit:hover{
-    background-color: rgb(52, 77, 160);
+    background-color: var(--cl-accent-2-08);
     transition: .3s;
   }
 
+
+
+
+  /*Estilos básicos de la tabla*/
   .table{
     margin-top: 50px;
-    background-color: #eaf1eb49;
+    background-color: var(--cl-accent-2-01);
   }
 
   .table table{
@@ -751,12 +896,12 @@ a{
   }
 
   .table table th {
-    background-color: #4F619D;
-    color: #fff;
+    background-color: var(--cl-accent-2-1);
+    color: var(--cl-light);
   }
 
   .table table td {
-    background-color: #E8EBF0;
+    background-color: var(--cl-accent-2-02);
   }
 
   .main2__contact--img{
@@ -765,25 +910,36 @@ a{
   }
 
 
+
+
+
+
+
+
   /*Diseño responsivo*/
 
   @media screen and (max-width: 1200px) {
 
 
+
     /*Menú responsivo*/
       /*Nav*/
 
+
+      /*Hace que el menú cambie su forma y ahora sea vertical*/
     .menu{
       display: block;
       position: absolute;
       height: 100vh;
       width: 300px;
       grid-template-columns: 1fr;
-      background-color: #fff;
+      background-color: var(--cl-light);
       left: 0px;
       margin-top: 10px;
     }
 
+
+    /*Abre o cierra el menú esto en modo web*/
     .menu__active{
       left: 0px;
       transition: 1s;
@@ -810,7 +966,11 @@ a{
       display: inline;
     }
 
+
+
+
   
+    /*Convierte los links del menú a vertical*/
     .menu-ul__li{
       display: block;
       float: none;
@@ -849,6 +1009,12 @@ a{
       display: inline;
     }
 
+
+
+
+
+
+    /*Contenedor del boton de cerrar menú en móvil*/
     .menu__close{
       width: 100%;
       display: block;
@@ -861,10 +1027,10 @@ a{
     .menu__close--btn{
       padding: 10px 30px;
       border: 0;
-      border: 1px solid rgb(106, 120, 245);
-      background-color: rgba(204, 221, 247, 0.527);;
+      border: 1px solid var(--cl-accent-1-06);
+      background-color: var(--cl-accent-1-05);
       font-size: 14px;
-      color: rgb(60, 102, 240);
+      color: var(--cl-accent-1-1);
       cursor: pointer;
     }
 
@@ -872,6 +1038,12 @@ a{
       display: block;
     }
 
+
+
+
+
+
+    /*Cambia la forma del nav en móvil*/
     .nav-main{
       display: grid;
       width: 94%;
@@ -890,12 +1062,21 @@ a{
 
       /*Fin Nav*/
 
+
+
+
+
+
       /*Index responsive*/
 
+
+      /*Cambiamos el orden de las columnas*/
       .container-intro{
         grid-template-columns: 1fr;
       }
 
+
+      /*Cambia el tamaño de las imágenes*/
       .container-intro__img-image1{
         width: 100%;
         height: 450px;
@@ -912,6 +1093,10 @@ a{
       }
 
 
+
+
+
+      /*Expande las columnas a toda la pantalla*/
       .container-module2-cnt{
         grid-template-columns: 1fr;
       }
@@ -937,6 +1122,11 @@ a{
         width: 100%;
       }
 
+
+
+
+
+      /*Cambia el tamaño de las columnas*/
       .container-module3-cnt{
         grid-template-columns: 1fr;
         width: 90%;
@@ -997,6 +1187,16 @@ a{
 
       /*Fin del index*/
 
+
+
+
+
+
+
+
+
+
+
       /*Inicio sobre nosotros*/
 
       .main2__container{
@@ -1024,9 +1224,21 @@ a{
       }
 
       /*Fin sobre nosotros*/
+
+
+
   
 
   }
+
+
+
+
+
+
+
+
+/*Para teléfonos de 800px o menos*/
 
 @media screen and (max-width: 800px) {
 
