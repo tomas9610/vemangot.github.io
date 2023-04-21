@@ -34,3 +34,22 @@ closeMenu.addEventListener("click", e => {
     closeNav()
 
 })
+
+
+//Reproductor de video
+
+let boton = document.getElementById('boton');
+let boton2 = document.getElementById('boton2'); 
+let video=document.getElementById('video'); 
+
+boton.addEventListener('click', presionar, false); 
+boton2.addEventListener('click', presionar2, false); 
+
+
+function presionar() { 
+   video.play(); 
+} 
+
+function presionar2() { 
+  video.pause(); 
+} 

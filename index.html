@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!--Librería AOS-->
     <script src="https://kit.fontawesome.com/34fd15bc9d.js" crossorigin="anonymous"></script>
     <title>Vemangot | Bienvenido a la veterinaria</title>
 </head>
@@ -40,7 +41,7 @@
                 </div>
             </div>
 
-            <!--Este es el menu de navegación claro que aún les falta las listas y todo eso pero ahí va.-->
+            <!--Este es el menu de navegación.-->
             <div id="menu" class="menu menu__inactive">
 
                 <div class="cta-container-menu">
@@ -115,18 +116,18 @@
                 <div class="container-intro__img">
 
                     <!--Imagen 1-->
-                    <div class="container-intro__img-image2">
+                    <div class="container-intro__img-image2" data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="2000">
                         <div class="container-intro__img-box cl__primary"></div>
                         <img class="container-intro__img-img2" src="assets/img/gatos1.jpg" alt="Imagen de gato">
                     </div>
 
                     <!--Imagen2-->
-                    <div class="container-intro__img-image1">
+                    <div class="container-intro__img-image1" data-aos="fade-up" data-aos-delay="50" data-aos-duration="2000">
                         <div class="container-intro__img-box cl__secundary"></div>
                         <img class="container-intro__img-img" src="assets/img/perro_goberiano.jpeg" alt="Perro">
                     </div>
 
-                    <div class="container-intro__img-image3">
+                    <div class="container-intro__img-image3" data-aos="fade-left" data-aos-delay="50" data-aos-duration="2000">
                         <div class="container-intro__img-box cl__third"></div>
                         <img class="container-intro__img-img2" src="assets/img/gato_gato.jpg" alt="Imagen de gato">
                     </div>
@@ -392,6 +393,38 @@
         </div> <!--* Contenedor5-->
 
 
+        <!--Video-->
+
+        <div class="container-module6">
+
+            <div class="container-module6-cnt">
+                <!-- <div class="container-module-6__video">holafaflore lore</div> -->
+
+                <div class="video__cnt">
+
+                    <div class="video__video">
+
+                        <video class="container-module-6__video" id="video">  
+                            <source src="assets/video/video.mp4.mp4">   
+                        </video> 
+
+                    </div>
+                    <div class="video__controller">
+                        <button class="btn-video btn-primary-shadow" id="boton" >Reproducir</button>
+                        <button class="btn-video btn-primary-shadow" id="boton2"> Pausar</button>
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
 
 
     </main>
@@ -445,6 +478,14 @@
 
 <script src="assets/js/script.js" async></script>
 <script src="assets/js/js.js" async></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!--Librería AOS-->
+
+<script>
+  AOS.init(); /*Librería AOS*/
+</script>
+
+
 </body>
 
 </html>

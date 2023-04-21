@@ -7,7 +7,7 @@
 /*Colores*/
 
 :root {
-  
+
     --cl-text: rgba(0, 0, 0, 62);
     --cl-text-hover:rgba(0, 0, 0, 62);
     --cl-primary :#F5ECEC; /*Fondo primer módulo y último*/
@@ -59,11 +59,11 @@
     .cl__primary{
       background-color: var(--cl-primary);
     }
-  
+
     .cl__secundary{
       background-color: var(--cl-secundary);
     }
-  
+
     .cl__third{
       background-color: var(--cl-third);
     }
@@ -114,10 +114,10 @@ a{
 
 /*Contenedor principal y estructura en PC*/
 
-.container { 
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto); 
+    grid-template-rows: repeat(3, auto);
     grid-template-areas:
       "header     header      header"
       "contenido  contenido   contenido"
@@ -336,7 +336,7 @@ a{
     background-color: var(--cl-light);
     z-index: 3;
   }
-  
+
 
 
 
@@ -799,13 +799,13 @@ a{
 
 /*Galería de imágenes*/
 
-.column { 
+.column {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 10px;
   width: 100%;
   }
-  
+
 .column img , .column iframe{
   width: 100%;
   height: 100%;
@@ -847,12 +847,35 @@ a{
 
 
   /*Le da estilos al input y al textarea*/
+
+  .contact__form--invalid{
+    background-color: rgba(255, 0, 0, 0.109);
+    border: 1px solid red;
+  }
+
+  .form__span--err{
+    color: rgb(238, 24, 24);
+    opacity: 1;
+  }
+
+  .form__span--hidd{
+    opacity: 0;
+  }
+
+  .contact__form--valid{
+    background-color: rgba(0, 128, 0, 0.075);
+    border: 1px solid green;
+  }
+
+  .contact__form--basic{
+    background-color: var(--cl-accent-2-02);
+    border: 1px solid var(--cl-accent-2-03);
+  }
+
   .contact__form--inp, .contact__form textarea{
     margin: 5px;
     position: relative;
     outline: none;
-    background-color: var(--cl-accent-2-02);
-    border: 1px solid var(--cl-accent-2-03);
     border-radius: 2px;
     width: 100%;
   }
@@ -912,7 +935,55 @@ a{
 
 
 
+/*Video css*/
 
+.container-module6{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cl-accent-2-03);
+}
+
+.container-module6-cnt{
+  width: 50%;
+  height: 480px;
+  margin: 20px;
+}
+
+.video__cnt{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color:  #fff;
+}
+
+.video__video{
+  height: 85%;
+  width: 100%;
+  position: relative;
+}
+
+
+.container-module-6__video {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  }
+
+  .video__controller{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .btn-video{
+    margin: 20px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+  }
 
 
 
@@ -944,7 +1015,7 @@ a{
       left: 0px;
       transition: 1s;
     }
-    
+
     .menu__inactive{
       transition: 1s;
       left: -300px;
@@ -969,15 +1040,15 @@ a{
 
 
 
-  
+
     /*Convierte los links del menú a vertical*/
     .menu-ul__li{
       display: block;
       float: none;
       margin: 5px 0;
-      
+
     }
-  
+
     .menu-ul .menu-ul__li:nth-child(1){
       margin-left: 0;
     }
@@ -995,7 +1066,7 @@ a{
       bottom: 10px;
     }
 
-    
+
     .cta-container-nav .btn-tca{
       margin-left: 0px;
     }
@@ -1108,13 +1179,13 @@ a{
         width: 100%;
 
       }
-      
+
       .container-module3-img-2{
         position: relative;
         top: 0;
         width: 100%;
       }
-      
+
       .container-module3-img-3{
         position: relative;
         top: 0;
@@ -1209,12 +1280,12 @@ a{
         margin: 25px 0;
         padding: 0 25px;
       }
-      
+
       .main2__about__box__2{
         position: relative;
         bottom: 0px;
       }
-      
+
       .main2__box{
         width: 100%;
       }
@@ -1226,8 +1297,11 @@ a{
       /*Fin sobre nosotros*/
 
 
+      .container-module6-cnt{
+        width: 100%;
+        height: 380px;
+      }
 
-  
 
   }
 
@@ -1271,7 +1345,18 @@ a{
   .contact_form--box{
     width: 95%;
   }
+  
 
   /*Fin del contacto*/
+  .container-module6-cnt{
+    width: 100%;
+    height: 320px;
+    margin: 20px;
+  }
+
+  .video__video{
+    height: 80%;
+  }
 
 }
+
