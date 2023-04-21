@@ -1303,6 +1303,22 @@ a{
         height: 380px;
       }
 
+      .column {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        width: 100%;
+        }
+      
+      .column img , .column iframe{
+        width: 100%;
+        height: 100%;
+      }
+      .column img:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 1;
+        }
+
 
   }
 
