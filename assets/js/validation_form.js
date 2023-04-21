@@ -5,6 +5,8 @@
 let validation_inp = Array.from(document.getElementsByClassName("validation_inp"))
 let myForm = document.getElementById("myForm")
 let allClas = []
+let msgUser = document.getElementById("msg-user")
+let msgContent = document.getElementById("msgContent")
 
 
 //Estas son las expresiones regulares, se obtuvo del video de FALCON MASTE
@@ -111,7 +113,20 @@ myForm.addEventListener("submit", e => {
 
     if(campos.name && campos.email && campos.phone){
 
-        alert("El formulario se ha enviado exitosamente")
+        msgContent.classList.add("contact__form--valid")
+        msgContent.classList.remove("contact__form--invalid")
+        msgUser.innerHTML = "El formulario se envió correctamente"
+        myForm.reset();
+        setTimeout(() => {
+            location.reload();
+          }, "2000");
+          
+
+    }else{
+
+        msgContent.classList.add("contact__form--invalid")
+        msgContent.classList.remove("contact__form--valid")
+        msgUser.innerHTML = "Error al enviar el formulario, revise los campos"
 
     }
 
